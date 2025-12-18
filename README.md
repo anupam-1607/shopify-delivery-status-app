@@ -13,6 +13,21 @@ Rather than cloning this repo, you can use your preferred package manager and th
 
 Visit the [`shopify.dev` documentation](https://shopify.dev/docs/api/shopify-app-remix) for more details on the Remix app package.
 
+## Screenshots
+
+### Home dashboard
+
+![Home dashboard](docs/home-dashboard.png)
+
+### Fulfillment dashboard
+
+![Fulfillment dashboard](docs/fulfillment-dashboard.png)
+
+### Delivery settings
+
+![Delivery settings](docs/settings.png)
+
+
 ## Quick start
 
 ### Prerequisites
