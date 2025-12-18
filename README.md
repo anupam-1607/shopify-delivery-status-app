@@ -27,6 +27,10 @@ Visit the [`shopify.dev` documentation](https://shopify.dev/docs/api/shopify-app
 
 ![Delivery settings](docs/settings.png)
 
+### Shopify Orders - check Delivery status column
+
+![Fulfillment dashboard](docs/delivery-status.png)
+
 
 ## Quick start
 
