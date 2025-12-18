@@ -45,7 +45,7 @@ The app is built as a real production‑style example to demonstrate end‑to‑
 - **Fulfillment Dashboard**  
   - Lists recent orders with fulfillment status.  
   - Allows merchants to set delivery status (In transit, Out for delivery, Delivered) using `fulfillmentEventCreate`.  
-  - Status changes are reflected directly in Shopify’s order timeline and “Delivery status” column.[web:172][web:176]
+  - Status changes are reflected directly in Shopify’s order timeline and “Delivery status” column.
 
 - **Home Dashboard**  
   - KPIs: Today’s orders, In transit, Out for delivery, Delivered.  
@@ -58,28 +58,28 @@ The app is built as a real production‑style example to demonstrate end‑to‑
 
 - **Clean Shopify App Architecture**  
   - Remix routes for Home, Orders dashboard, and Settings.  
-  - Uses Shopify App Bridge + Polaris for a native Admin look and feel.[web:177][web:189]
+  - Uses Shopify App Bridge + Polaris for a native Admin look and feel.
 
 ---
 
 ## Tech stack
 
 - **Framework:** Remix (TypeScript)  
-- **UI:** Shopify Polaris, App Bridge embedded app shell[web:177][web:189]  
+- **UI:** Shopify Polaris, App Bridge embedded app shell
 - **Backend:** Shopify Admin GraphQL API (via `authenticate.admin`)  
-- **Auth & App glue:** `@shopify/shopify-app-remix`[web:235][web:243]  
+- **Auth & App glue:** `@shopify/shopify-app-remix` 
 - **Dev tooling:** Shopify CLI, ngrok (or Shopify tunnels), Git, npm
 
 ---
 
 ## Shopify setup
 
-These steps assume you have a Shopify Partners account and Shopify CLI installed.[web:235][web:246]
+These steps assume you have a Shopify Partners account and Shopify CLI installed.
 
 1. **Create the app in Shopify Partners**
 
    - Go to **Partners Dashboard → Apps → Create app → Custom app**.  
-   - Note the **Client ID** and **Client secret** (these map to `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET`).[web:239][web:247]
+   - Note the **Client ID** and **Client secret** (these map to `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET`).
 
 2. **Configure access scopes (App Dev Dashboard → Versions)**
 
@@ -90,7 +90,7 @@ These steps assume you have a Shopify Partners account and Shopify CLI installed
    - `read_fulfillments`  
    - `write_fulfillments`  
    - `read_customers` (if you later show customer names)  
-   - Any additional fulfillment‑order scopes Shopify suggests when using `read/write_fulfillments` (for example `read_assigned_fulfillment_orders`, `write_merchant_managed_fulfillment_orders`).[web:236][web:248]
+   - Any additional fulfillment‑order scopes Shopify suggests when using `read/write_fulfillments` (for example `read_assigned_fulfillment_orders`, `write_merchant_managed_fulfillment_orders`).
 
    Save and release the version used by this app.
 
@@ -100,7 +100,7 @@ These steps assume you have a Shopify Partners account and Shopify CLI installed
 
    - In **App setup → Protected customer data access**, request access for **Orders** and **Customers**, with reasons such as:
      - “App displays order and fulfillment status in a custom dashboard.”
-   - In **API access → Access requests**, request any additional scopes that require review (for example `read_all_orders` if you want history beyond 60 days).[web:240]
+   - In **API access → Access requests**, request any additional scopes that require review (for example `read_all_orders` if you want history beyond 60 days).
 
 4. **Create a development store and install the app**
 
@@ -123,7 +123,7 @@ npm install
 From the Shopify app in Partners Dashboard, copy:
 
 - **Client ID** → `SHOPIFY_API_KEY`  
-- **Client secret** → `SHOPIFY_API_SECRET`[web:239][web:243]  
+- **Client secret** → `SHOPIFY_API_SECRET`  
 
 Then create `.env` in the project root:
 
@@ -132,7 +132,7 @@ SHOPIFY_API_SECRET=your_client_secret_here
 SHOPIFY_APP_URL=https://your-tunnel-url.ngrok-free.app
 
 
-`SHOPIFY_APP_URL` should match the tunnel URL used by `shopify app dev`.[web:235][web:243]
+`SHOPIFY_APP_URL` should match the tunnel URL used by `shopify app dev`.
 
 3. **Run the app with Shopify CLI**
 
@@ -143,7 +143,7 @@ shopify app dev
 
 - Choose the existing app you created in Partners.  
 - Choose your development store.  
-- Shopify CLI will update app URLs automatically and open the app in the store Admin.[web:235][web:246]
+- Shopify CLI will update app URLs automatically and open the app in the store Admin.
 
 4. **Using the app**
 
@@ -168,7 +168,7 @@ _Add your screenshots here, for example:_
 ## Notes on security
 
 - App secrets are **never** committed. All secrets live in `.env`, which is git‑ignored.  
-- `SHOPIFY_API_SECRET` must be treated as private and should never appear in logs or screenshots.[web:239][web:243]  
+- `SHOPIFY_API_SECRET` must be treated as private and should never appear in logs or screenshots.
 - The public repo shows app structure and logic only; actual store data is loaded at runtime during development.
 
 ---
